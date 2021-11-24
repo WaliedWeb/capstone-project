@@ -53,8 +53,7 @@ const Label = styled.label`
   gap: 5px;
 `;
 
-const Input = styled.input`
-`;
+const Input = styled.input``;
 
 const Button = styled.button`
   padding: 10px 20px;
