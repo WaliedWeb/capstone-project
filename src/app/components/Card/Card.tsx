@@ -1,23 +1,23 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 type CardProps = {
-    destination: string
-    memories: string
-}
-  
+  destination: string;
+  memories: string;
+};
+
 export default function Card({
-    destination,
-    memories,
-  }: CardProps): JSX.Element {
-    return (
-      <CardContainer>
-        <h2>{destination}</h2>
-        <p>{memories}</p>
-      </CardContainer>
-    )
+  destination,
+  memories,
+}: CardProps): JSX.Element {
+  return (
+    <CardContainer>
+      <h2>{destination}</h2>
+      <p>{memories}</p>
+    </CardContainer>
+  );
 }
-  
+
 const CardContainer = styled.article`
   display: flex;
   flex-direction: column;

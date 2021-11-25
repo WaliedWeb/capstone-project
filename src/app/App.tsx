@@ -10,23 +10,18 @@ export default function App(): JSX.Element {
     },
   ]);
 
-  function handleSubmit(diary: {
-    destination: string;
-    memories: string;
-  }) {
+  function handleSubmit(diary: { destination: string; memories: string }) {
     const newDiaries = [...diaries];
     newDiaries.push(diary);
     setDiaries(newDiaries);
   }
 
   return (
-        <div>
-        <DiaryInput onSubmit={handleSubmit} />
-        {diaries.map((diary) => (
-          <Card
-            destination={diary.destination}
-            memories={diary.memories}
-          />
-        ))}
-      </div>
-  )};
+    <div>
+      <DiaryInput onSubmit={handleSubmit} />
+      {diaries.map((diary) => (
+        <Card destination={diary.destination} memories={diary.memories} />
+      ))}
+    </div>
+  );
+}

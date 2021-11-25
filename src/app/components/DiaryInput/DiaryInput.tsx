@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 type DiaryInputProps = {
-  onSubmit: (diary: {
-    destination: string;
-    memories: string;
-  }) => void;
+  onSubmit: (diary: { destination: string; memories: string }) => void;
 };
 
 export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
@@ -14,7 +11,7 @@ export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    onSubmit({ destination, memories});
+    onSubmit({ destination, memories });
   }
 
   return (
