@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-export default function DiaryInput(): JSX.Element {
+type DiaryInputProps = {
+  onSubmit: (diary: { destination: string; memories: string }) => void;
+};
+
+export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
   const [destination, setDestination] = useState('');
   const [memories, setMemories] = useState('');
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    onSubmit({ destination, memories });
   }
 
   return (
@@ -39,8 +44,7 @@ const FormBody = styled.article`
   border: 2px solid hotpink;
   padding: 50px 20px 20px 20px;
   gap: 20px;
-  margin-left: 400px;
-  margin-right: 500px;
+  margin: 20px;
 `;
 
 const Form = styled.form`
