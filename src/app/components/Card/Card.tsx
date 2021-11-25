@@ -21,10 +21,11 @@ export default function Card({
 const CardContainer = styled.article`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   gap: 5px;
-  border-radius: 8px;
-  padding: 20px;
+  border: 5px solid rgb(42, 85, 85);
+  margin: 20px;
+  padding: 10px;
   background-color: var(--color-light-orange);
   color: var(--color-font-dark);
 `;
