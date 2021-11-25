@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-export default function DiaryInput(): JSX.Element {
+type DiaryInputProps = {
+  onSubmit: (diary: {
+    destination: string;
+    memories: string;
+  }) => void;
+};
+
+export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
   const [destination, setDestination] = useState('');
   const [memories, setMemories] = useState('');
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    onSubmit({ destination, memories});
   }
 
   return (
