@@ -39,8 +39,7 @@ const FormBody = styled.article`
   border: 2px solid hotpink;
   padding: 50px 20px 20px 20px;
   gap: 20px;
-  margin-left: 400px;
-  margin-right: 500px;
+  margin: 20px;
 `;
 
 const Form = styled.form`
