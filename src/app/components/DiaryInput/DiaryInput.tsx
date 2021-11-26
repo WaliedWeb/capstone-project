@@ -27,8 +27,7 @@ export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
         </Label>
         <Label>
           Memories:{''}
-          <Input
-            type="textarea"
+          <Textarea
             value={memories}
             onChange={(event) => setMemories(event.target.value)}
           />
@@ -40,11 +39,13 @@ export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
 }
 
 const FormBody = styled.article`
-  display: grid;
   border: 2px solid hotpink;
-  padding: 50px 20px 20px 20px;
-  gap: 20px;
-  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  font-weight: 700;
+  background-color: #356ee9;
 `;
 
 const Form = styled.form`
@@ -57,7 +58,10 @@ const Label = styled.label`
   gap: 5px;
 `;
 
-const Input = styled.input``;
+const Input = styled.input`
+`;
+
+const Textarea = styled.textarea``;
 
 const Button = styled.button`
   padding: 10px 20px;
