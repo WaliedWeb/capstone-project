@@ -1,31 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
+import RoundButton from '../RoundButton/RoundButton';
 
 type CardProps = {
-  destination: string;
-  memories: string;
+  diary: {
+    destination: string;
+    memories: string;
+  };
+  deleteCard: (name: string) => void;
 };
 
 export default function Card({
-  destination,
-  memories,
+  diary,
+  deleteCard,
 }: CardProps): JSX.Element {
+  const {destination, memories } = diary
   return (
     <CardContainer>
-      <h2>{destination}</h2>
-      <p>{memories}</p>
+      <Destination>{destination}</Destination>
+      <RoundButton children="X" handleClick={() => deleteCard(destination)} />
+        <Memories>{memories}</Memories>
     </CardContainer>
   );
 }
 
 const CardContainer = styled.article`
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  gap: 5px;
-  border: 5px solid rgb(42, 85, 85);
+  position: relative;
+  border-radius: 0.5rem;
+  border: 5px solid rgb(50, 112, 112);
+  width: 90%;
   margin: 20px;
-  padding: 10px;
-  background-color: var(--color-light-orange);
-  color: var(--color-font-dark);
+  padding-left: 10px;
+  background-color: #6e90db;
+`;
+
+const Destination = styled.h1`
+  color: var(--color-text-white);
+  padding: 0.5rem 0.75rem;
+  margin: 0;
+`;
+
+const Memories = styled.p`
+  color: var(--color-text-lightgreen);
+  padding: 0.5rem 1rem;
+  margin: 0;
 `;
