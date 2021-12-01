@@ -4,12 +4,10 @@ import Card from './components/Card/Card';
 import DiaryInput from './components/DiaryInput/DiaryInput';
 import useLocalStorage from './hooks/useLocalStorage';
 
-type Diary = { destination: string; memories: string}
+type Diary = { destination: string; memories: string };
 
 export default function App(): JSX.Element {
-  const [diaries, setDiaries] = useLocalStorage<
-    Diary[] 
-  >("diaries", []);
+  const [diaries, setDiaries] = useLocalStorage<Diary[]>('diaries', []);
 
   function handleSubmit(diary: { destination: string; memories: string }) {
     const newDiaries = [...diaries];
@@ -27,12 +25,12 @@ export default function App(): JSX.Element {
       <Cardcontainer>
         {diaries &&
           diaries.map((diary, key) => (
-          <Card
-            diary={diary}
-            key={`${diary.destination}-${key}`}
-            deleteCard={() => deleteDiary(diary)}
-          />
-        ))}
+            <Card
+              diary={diary}
+              key={`${diary.destination}-${key}`}
+              deleteCard={() => deleteDiary(diary)}
+            />
+          ))}
       </Cardcontainer>
       <Div>
         <DiaryInput onSubmit={handleSubmit} />
