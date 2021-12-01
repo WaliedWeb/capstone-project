@@ -10,16 +10,13 @@ type CardProps = {
   deleteCard: (name: string) => void;
 };
 
-export default function Card({
-  diary,
-  deleteCard,
-}: CardProps): JSX.Element {
-  const {destination, memories } = diary
+export default function Card({ diary, deleteCard }: CardProps): JSX.Element {
+  const { destination, memories } = diary;
   return (
     <CardContainer>
       <Destination>{destination}</Destination>
       <RoundButton children="X" handleClick={() => deleteCard(destination)} />
-        <Memories>{memories}</Memories>
+      <Memories>{memories}</Memories>
     </CardContainer>
   );
 }

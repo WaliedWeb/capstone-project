@@ -58,8 +58,7 @@ const Label = styled.label`
   gap: 5px;
 `;
 
-const Input = styled.input`
-`;
+const Input = styled.input``;
 
 const Textarea = styled.textarea``;
 
