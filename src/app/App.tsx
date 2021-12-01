@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Card from './components/Card/Card';
 import DiaryInput from './components/DiaryInput/DiaryInput';
+import useLocalStorage from './hooks/useLocalStorage';
+
+type Diary = { destination: string; memories: string}
 
 export default function App(): JSX.Element {
-  const [diaries, setDiaries] = useState([
-    {
-      destination: 'Paris',
-      memories: "it's a beautiful city",
-    },
-  ]);
+  const [diaries, setDiaries] = useLocalStorage<
+    Diary[] 
+  >("diaries", []);
 
   function handleSubmit(diary: { destination: string; memories: string }) {
     const newDiaries = [...diaries];
@@ -25,7 +25,8 @@ export default function App(): JSX.Element {
   return (
     <Container>
       <Cardcontainer>
-        {diaries.map((diary, key) => (
+        {diaries &&
+          diaries.map((diary, key) => (
           <Card
             diary={diary}
             key={`${diary.destination}-${key}`}
