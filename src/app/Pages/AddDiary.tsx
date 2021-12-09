@@ -17,8 +17,8 @@ export default function AddDiary(): JSX.Element {
   }) {
     const newDiaries = [...diaries];
     newDiaries.push(diary);
-      setDiaries(newDiaries);
-      navigate ("/")
+    setDiaries(newDiaries);
+    navigate('/');
   }
 
   return (
