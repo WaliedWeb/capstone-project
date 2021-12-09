@@ -1,62 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
-import Card from './components/Card/Card';
-import DiaryInput from './components/DiaryInput/DiaryInput';
-import useLocalStorage from './hooks/useLocalStorage';
-
-type Diary = { destination: string; date: string; memories: string };
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AddDiary from './Pages/AddDiary';
+import Dashboard from './Pages/Dashboard';
 
 export default function App(): JSX.Element {
-  const [diaries, setDiaries] = useLocalStorage<Diary[]>('diaries', []);
-
-  function handleSubmit(diary: {
-    destination: string;
-    date: string;
-    memories: string;
-  }) {
-    const newDiaries = [...diaries];
-    newDiaries.push(diary);
-    setDiaries(newDiaries);
-  }
-
-  function deleteDiary(diary: {
-    destination: string;
-    date: string;
-    memories: string;
-  }) {
-    const newDiarylist = diaries.filter((singleDiary) => singleDiary !== diary);
-    setDiaries(newDiarylist);
-  }
+ 
 
   return (
-    <Container>
-      <Cardcontainer>
-        {diaries &&
-          diaries.map((diary, key) => (
-            <Card
-              diary={diary}
-              key={`${diary.destination}-${key}`}
-              deleteCard={() => deleteDiary(diary)}
-            />
-          ))}
-      </Cardcontainer>
-      <Div>
-        <DiaryInput onSubmit={handleSubmit} />
-      </Div>
-    </Container>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path= "addMemories" element={<AddDiary/>} />
+      </Routes>
+    </BrowserRouter>
+
   );
 }
-
-const Container = styled.div`
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr auto;
-`;
-
-const Cardcontainer = styled.div`
-  overflow-y: auto;
-`;
-
-const Div = styled.div`
-  display: grid;
-`;
