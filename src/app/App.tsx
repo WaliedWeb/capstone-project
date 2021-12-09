@@ -4,15 +4,12 @@ import AddDiary from './Pages/AddDiary';
 import Dashboard from './Pages/Dashboard';
 
 export default function App(): JSX.Element {
- 
-
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path= "addMemories" element={<AddDiary/>} />
+        <Route path="addMemories" element={<AddDiary />} />
       </Routes>
     </BrowserRouter>
-
   );
 }
