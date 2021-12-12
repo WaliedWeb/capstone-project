@@ -2,16 +2,21 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 type DiaryInputProps = {
-  onSubmit: (diary: { destination: string; memories: string }) => void;
+  onSubmit: (diary: {
+    destination: string;
+    date: string;
+    memories: string;
+  }) => void;
 };
 
 export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
   const [destination, setDestination] = useState('');
+  const [date, setDate] = useState('');
   const [memories, setMemories] = useState('');
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    onSubmit({ destination, memories });
+    onSubmit({ destination, date, memories });
   }
 
   return (
@@ -23,6 +28,14 @@ export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
             type="text"
             value={destination}
             onChange={(event) => setDestination(event.target.value)}
+          />
+        </Label>
+        <Label>
+          Date:{''}
+          <Input
+            type="date"
+            value={date}
+            onChange={(event) => setDate(event.target.value)}
           />
         </Label>
         <Label>

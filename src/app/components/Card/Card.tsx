@@ -5,17 +5,19 @@ import RoundButton from '../RoundButton/RoundButton';
 type CardProps = {
   diary: {
     destination: string;
+    date: string;
     memories: string;
   };
   deleteCard: (name: string) => void;
 };
 
 export default function Card({ diary, deleteCard }: CardProps): JSX.Element {
-  const { destination, memories } = diary;
+  const { destination, date, memories } = diary;
   return (
     <CardContainer>
       <Destination>{destination}</Destination>
       <RoundButton children="X" handleClick={() => deleteCard(destination)} />
+      <Date>{date}</Date>
       <Memories>{memories}</Memories>
     </CardContainer>
   );
@@ -41,4 +43,8 @@ const Memories = styled.p`
   color: var(--color-text-lightgreen);
   padding: 0.5rem 1rem;
   margin: 0;
+`;
+
+const Date = styled.p`
+  padding: 0.5rem 0.75rem;
 `;
