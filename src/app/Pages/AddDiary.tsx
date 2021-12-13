@@ -4,7 +4,12 @@ import styled from 'styled-components';
 import DiaryInput from '../components/DiaryInput/DiaryInput';
 import useLocalStorage from '../hooks/useLocalStorage';
 
-type Diary = { destination: string; date: string; memories: string; image: string;};
+type Diary = {
+  destination: string;
+  date: string;
+  memories: string;
+  image: string;
+};
 
 export default function AddDiary(): JSX.Element {
   const [diaries, setDiaries] = useLocalStorage<Diary[]>('diaries', []);
