@@ -51,5 +51,4 @@ const Date = styled.p`
   padding: 0.5rem 0.75rem;
 `;
 
-const Image = styled.button`
-`;
+const Image = styled.button``;
