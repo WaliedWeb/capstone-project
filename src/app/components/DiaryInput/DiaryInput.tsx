@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import UploadImage from '../UploadImage/UploadImage';
 
 type DiaryInputProps = {
   onSubmit: (diary: {
     destination: string;
     date: string;
     memories: string;
+    image: string;
   }) => void;
 };
 
@@ -13,17 +15,18 @@ export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
   const [destination, setDestination] = useState('');
   const [date, setDate] = useState('');
   const [memories, setMemories] = useState('');
+  const [image, setImage] = useState('');
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    onSubmit({ destination, date, memories });
+    onSubmit({ destination, date, memories, image });
   }
 
   return (
     <FormBody>
       <Form onSubmit={(event) => handleSubmit(event)}>
         <Label>
-          Destination:{''}
+          Destination:
           <Input
             type="text"
             value={destination}
@@ -31,7 +34,7 @@ export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
           />
         </Label>
         <Label>
-          Date:{''}
+          Date:
           <Input
             type="date"
             value={date}
@@ -39,11 +42,15 @@ export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
           />
         </Label>
         <Label>
-          Memories:{''}
+          Memories:
           <Textarea
             value={memories}
             onChange={(event) => setMemories(event.target.value)}
           />
+        </Label>
+        <Label>
+          Image:
+          <UploadImage onUpload={() => console.log('works maybe')} />
         </Label>
         <Button type="submit">+</Button>
       </Form>
