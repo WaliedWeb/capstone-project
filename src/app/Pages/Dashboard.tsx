@@ -4,7 +4,12 @@ import styled from 'styled-components';
 import Card from '../components/Card/Card';
 import useLocalStorage from '../hooks/useLocalStorage';
 
-type Diary = { destination: string; date: string; memories: string };
+type Diary = {
+  destination: string;
+  date: string;
+  memories: string;
+  image: string;
+};
 
 export default function Dashboard(): JSX.Element {
   const [diaries, setDiaries] = useLocalStorage<Diary[]>('diaries', []);
@@ -13,6 +18,7 @@ export default function Dashboard(): JSX.Element {
     destination: string;
     date: string;
     memories: string;
+    image: string;
   }) {
     const newDiarylist = diaries.filter((singleDiary) => singleDiary !== diary);
     setDiaries(newDiarylist);
