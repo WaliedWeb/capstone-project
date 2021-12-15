@@ -26,9 +26,6 @@ export default function Dashboard(): JSX.Element {
 
   return (
     <Container>
-      <Link to="/addMemories">
-        <Button>AddMemories</Button>
-      </Link>
       <Cardcontainer>
         {diaries &&
           diaries.map((diary, key) => (
@@ -44,7 +41,7 @@ export default function Dashboard(): JSX.Element {
 }
 
 const Container = styled.div`
-  height: 100vh;
+  height: 94vh;
   display: grid;
   grid-template-rows: 1fr auto;
 `;
