@@ -59,13 +59,13 @@ export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
 }
 
 const FormBody = styled.article`
-  border: 2px solid hotpink;
+  border: 2px solid #5adeff;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 0.5rem;
   font-weight: 700;
-  background-color: #356ee9;
+  background-color: #00bdfe;
 `;
 
 const Form = styled.form`

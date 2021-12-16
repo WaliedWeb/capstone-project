@@ -50,7 +50,7 @@ const Button = styled.button.attrs<StylingProps>((props) => ({
   align-items: center;
   width: ${({ customStyles }: StylingProps) => customStyles.sizeButton};
   height: ${({ customStyles }: StylingProps) => customStyles.sizeButton};
-  background: hotpink;
+  background: #0ea9dd;
   border-radius: 50%;
   border: 1px solid black;
   color: white;

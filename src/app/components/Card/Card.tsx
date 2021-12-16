@@ -28,11 +28,11 @@ export default function Card({ diary, deleteCard }: CardProps): JSX.Element {
 const CardContainer = styled.article`
   position: relative;
   border-radius: 0.5rem;
-  border: 5px solid rgb(50, 112, 112);
+  border: 3px solid #5adeff;
   width: 90%;
   margin: 20px;
   padding-left: 10px;
-  background-color: #6e90db;
+  background-color: #00bdfe;
 `;
 
 const Destination = styled.h1`
