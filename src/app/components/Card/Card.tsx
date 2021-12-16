@@ -20,7 +20,7 @@ export default function Card({ diary, deleteCard }: CardProps): JSX.Element {
       <RoundButton children="X" handleClick={() => deleteCard(destination)} />
       <Date>{date}</Date>
       <Memories>{memories}</Memories>
-      <Image>{image}</Image>
+      <Image src={image}></Image>
     </CardContainer>
   );
 }
@@ -51,4 +51,4 @@ const Date = styled.p`
   padding: 0.5rem 0.75rem;
 `;
 
-const Image = styled.button``;
+const Image = styled.img``;
