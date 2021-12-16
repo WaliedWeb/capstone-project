@@ -50,7 +50,7 @@ export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
         </Label>
         <Label>
           Image:
-          <UploadImage onUpload={() => console.log('works maybe')} />
+          <UploadImage onUpload={(url) => setImage(url)} />
         </Label>
         <Button type="submit">+</Button>
       </Form>
