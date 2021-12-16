@@ -8,15 +8,15 @@ export default function Navigation(): JSX.Element {
     <Container>
       <NavLink to="/">
         {' '}
-        <HiHome size={30} />{' '}
+        <HiHome size={30} style={{ fill: 'var(--font-main)' }} />
       </NavLink>
       <NavLink to="addMemories">
         {' '}
-        <HiPencilAlt size={30} />{' '}
+        <HiPencilAlt size={30} style={{ fill: 'var(--font-main)' }} />
       </NavLink>
       <NavLink to="memories">
         {' '}
-        <HiOutlineBookOpen size={30} />{' '}
+        <HiOutlineBookOpen size={30} style={{ stroke: 'var(--font-main)' }} />
       </NavLink>
     </Container>
   );
@@ -25,7 +25,7 @@ export default function Navigation(): JSX.Element {
 const Container = styled.nav`
   display: flex;
   justify-content: space-around;
-  // position: relative;
   align-items: flex-end;
   height: 6vh;
+  background-color: var(--card-bg-middle);
 `;
