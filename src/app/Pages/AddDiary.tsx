@@ -29,9 +29,6 @@ export default function AddDiary(): JSX.Element {
 
   return (
     <Container>
-      <Link to="/">
-        <Button>Memories</Button>{' '}
-      </Link>
       <Div>
         <DiaryInput onSubmit={handleSubmit} />
       </Div>
@@ -40,7 +37,7 @@ export default function AddDiary(): JSX.Element {
 }
 
 const Container = styled.div`
-  height: 100vh;
+  height: 94vh;
   display: grid;
   grid-template-rows: 1fr auto;
 `;
