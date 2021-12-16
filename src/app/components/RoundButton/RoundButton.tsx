@@ -50,9 +50,9 @@ const Button = styled.button.attrs<StylingProps>((props) => ({
   align-items: center;
   width: ${({ customStyles }: StylingProps) => customStyles.sizeButton};
   height: ${({ customStyles }: StylingProps) => customStyles.sizeButton};
-  background: #0ea9dd;
+  background: var(--button-main);
   border-radius: 50%;
-  border: 1px solid black;
-  color: white;
+  border: 2px solid var(--font-main);
+  color: var(--font-main);
   font-weight: 500;
 `;
