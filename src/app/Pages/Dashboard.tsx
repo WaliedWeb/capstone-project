@@ -49,5 +49,3 @@ const Container = styled.div`
 const Cardcontainer = styled.div`
   overflow-y: auto;
 `;
-
-const Button = styled.button``;
