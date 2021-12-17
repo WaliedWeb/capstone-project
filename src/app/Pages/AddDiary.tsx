@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import DiaryInput from '../components/DiaryInput/DiaryInput';
 import useLocalStorage from '../hooks/useLocalStorage';
@@ -45,5 +45,3 @@ const Container = styled.div`
 const Div = styled.div`
   display: grid;
 `;
-
-const Button = styled.button``;

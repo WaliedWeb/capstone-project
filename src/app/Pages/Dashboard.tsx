@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Card from '../components/Card/Card';
 import useLocalStorage from '../hooks/useLocalStorage';
