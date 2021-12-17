@@ -9,6 +9,14 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
     }
 
+    :root {
+        --card-bg-dark: #1D3557;
+        --card-bg-middle: #457B9D;
+        --card-bg-light: #A8DADC;
+        --font-main: #F1FAEE;
+        --button-main: #E63946;
+    }
+
     body {
     margin: 0;
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -16,8 +24,8 @@ const GlobalStyles = createGlobalStyle`
         'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: white;
-    background-color: #D8F2FF;
+    color: var(--font-main);
+    background-color: var(--card-bg-light);
     }
 
     code {

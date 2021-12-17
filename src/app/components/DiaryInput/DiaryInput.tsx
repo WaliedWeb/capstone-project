@@ -60,12 +60,14 @@ export default function DiaryInput({ onSubmit }: DiaryInputProps): JSX.Element {
 
 const FormBody = styled.article`
   border: 2px solid #5adeff;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 0.5rem;
+  padding: 1.5rem;
+  margin: 20px;
   font-weight: 700;
-  background-color: #00bdfe;
+  background-color: var(--card-bg-dark);
 `;
 
 const Form = styled.form`
